@@ -1,0 +1,31 @@
+{
+  "name": "@stashpad/markdown-translator",
+  "version": "0.1.0",
+  "description": "Stashpad-flavored markdown translation tools",
+  "main": "dist/index.js",
+  "type": "module",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run build:bundle:cjs && npm run build:bundle:esm && tsc -p tsconfig.json",
+    "build:bundle:cjs": "esbuild index.ts --bundle --format=cjs --outfile=dist/index.cjs",
+    "build:bundle:esm": "esbuild index.ts --bundle --format=esm --outfile=dist/index.js",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.2",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.3",
+    "vitest": "^1.4.0"
+  },
+  "dependencies": {
+    "@codemirror/state": "^6.4.1",
+    "@lezer/common": "^1.2.1",
+    "@lezer/markdown": "^1.3.0"
+  }
+}
