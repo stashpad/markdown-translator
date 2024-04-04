@@ -11,6 +11,10 @@
   "types": "dist/index.d.ts",
   "files": ["dist"],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stashpad/markdown-translator"
+  },
   "scripts": {
     "build": "npm run build:bundle:cjs && npm run build:bundle:esm && tsc -p tsconfig.json",
     "build:bundle:cjs": "esbuild index.ts --bundle --format=cjs --outfile=dist/index.cjs",
